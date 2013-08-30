@@ -45,7 +45,9 @@ LOCAL_CFLAGS += -DTEST_SRC_ALPHA
 # draw-time, at which point we know which SkTypeface is being drawn
 LOCAL_CFLAGS += -DSK_USE_FREETYPE_EMBOLDEN
 
+ifneq ($(DEBUG_FORCE_STRICT_ALIASING),yes)
 LOCAL_CFLAGS += -fno-strict-aliasing
+endif
 
 LOCAL_CFLAGS += -fvisibility=hidden
 LOCAL_SRC_FILES:= SavedPagePlayback.cpp
